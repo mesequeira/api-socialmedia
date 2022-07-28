@@ -16,12 +16,13 @@
 
   <ItemGroup>
     <Folder Include="DTOs\" />
-    <Folder Include="Features\Users\Commands\DeleteUserCommand\" />
-    <Folder Include="Features\Users\Commands\UpdateUserCommand\" />
     <Folder Include="Features\Users\Queries\GetAllUsers\" />
     <Folder Include="Features\Users\Queries\GetUserById\" />
     <Folder Include="Filters\" />
-    <Folder Include="Mappings\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -28,10 +28,10 @@ namespace Persistence.Contexts
                 switch (entry.State)
                 {
                     case EntityState.Modified:
-                        entry.Entity.Created = _dateTimeService.NowUtc;
+                        entry.Entity.LastModified = _dateTimeService.NowUtc;
                         break;
                     case EntityState.Added:
-                        entry.Entity.LastModified = _dateTimeService.NowUtc;
+                        entry.Entity.Created = _dateTimeService.NowUtc;
                         break;
                 }
             }

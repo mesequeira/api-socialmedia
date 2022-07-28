@@ -1,3 +1,5 @@
+using ApiSocialMedia.Extension;
+using ApiSocialMedia.Extensions;
 using Application;
 using Persistence;
 using Shared;
@@ -12,7 +14,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddPersistenceInfraestructure(builder.Configuration);
 builder.Services.AddSharedInfraestructure(builder.Configuration);
 builder.Services.AddSwaggerGen();
-builder.Services.AddApllicationLayer(); 
+builder.Services.AddApllicationLayer();
+builder.Services.AddApiVersioningExtension();
 
 var app = builder.Build();
 
@@ -24,6 +27,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseErrorHandlingMiddleware();
 
 app.UseAuthorization();
 

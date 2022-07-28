@@ -19,8 +19,12 @@ namespace Persistence.Configuration
 
             builder.Property(p => p.UserName)
                 .HasMaxLength(50)
-                .IsRequired();            
-            
+                .IsRequired();
+
+            builder.Property(p => p.UserName)
+                .HasMaxLength(100)
+                .IsRequired();
+
             builder.Property(p => p.Email)
                 .HasMaxLength(150)
                 .IsRequired();
