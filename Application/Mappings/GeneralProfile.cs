@@ -1,4 +1,5 @@
-﻿using Application.Features.Users.Commands.CreateUserCommand;
+﻿using Application.DTOs;
+using Application.Features.Users.Commands.CreateUserCommand;
 using AutoMapper;
 using Domain.Entities;
 using System;
@@ -14,7 +15,11 @@ namespace Application.Mappings
         public GeneralProfile()
         {
             #region Commands
-            CreateMap<DeleteUserCommand, User>();
+            CreateMap<CreateUserCommand, User>();
+            #endregion
+
+            #region DTOs
+            CreateMap<User, UserDto>();
             #endregion
         }
     }

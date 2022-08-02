@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Features.Users.Commands.CreateUserCommand
+namespace Application.Features.Users.Commands.UpdateUserCommand
 {
     public class UpdateUserCommand : IRequest<Response<int>>
     {
