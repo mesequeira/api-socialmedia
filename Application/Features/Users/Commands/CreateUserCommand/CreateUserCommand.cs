@@ -11,14 +11,14 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Users.Commands.CreateUserCommand
 {
-    public class DeleteUserCommand : IRequest<Response<int>>
+    public class CreateUserCommand : IRequest<Response<int>>
     {
         public string UserName { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
     }
 
-    public class DeleteUserCommandHandler : IRequestHandler<DeleteUserCommand, Response<int>>
+    public class DeleteUserCommandHandler : IRequestHandler<CreateUserCommand, Response<int>>
     {
         private readonly IRepositoryAsync<User> _repositoryAsync;
 
@@ -29,7 +29,7 @@ namespace Application.Features.Users.Commands.CreateUserCommand
             _repositoryAsync = repositoryAsync;
             _mapper = mapper;
         }
-        public async Task<Response<int>> Handle(DeleteUserCommand request, CancellationToken cancellationToken)
+        public async Task<Response<int>> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
             var user = _mapper.Map<User>(request);
             var data = await _repositoryAsync.AddAsync(user);

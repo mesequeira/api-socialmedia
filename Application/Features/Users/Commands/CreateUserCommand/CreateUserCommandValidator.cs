@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Users.Commands.CreateUserCommand
 {
-    public class CreateUserCommandValidator : AbstractValidator<DeleteUserCommand>
+    public class CreateUserCommandValidator : AbstractValidator<CreateUserCommand>
     {
         public CreateUserCommandValidator()
         {
