@@ -1,4 +1,4 @@
-﻿using Application.DTOs;
+﻿using Application.DTOs.Users;
 using Application.Interfaces;
 using Application.Specifications;
 using Application.Wrappers;

@@ -1,4 +1,4 @@
-﻿using Application.DTOs;
+﻿using Application.DTOs.Users;
 using Application.Features.Users.Commands.CreateUserCommand;
 using AutoMapper;
 using Domain.Entities;

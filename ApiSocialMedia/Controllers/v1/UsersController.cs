@@ -3,6 +3,7 @@ using Application.Features.Users.Commands.DeleteUserCommand;
 using Application.Features.Users.Commands.UpdateUserCommand;
 using Application.Features.Users.Queries.GetAllUsers;
 using Application.Features.Users.Queries.GetUserById;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,6 +23,7 @@ namespace ApiSocialMedia.Controllers.v1
 
         //POST api/<controller>
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Post(CreateUserCommand command) => Ok(await Mediator.Send(command));
 
         //DELETE: api/<controller>/<id:int>
@@ -30,6 +32,7 @@ namespace ApiSocialMedia.Controllers.v1
 
         //PUT: api/<controller>/<id:int>
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<IActionResult> Put(int id, UpdateUserCommand command) => Ok(await Mediator.Send(command));
     }
 }

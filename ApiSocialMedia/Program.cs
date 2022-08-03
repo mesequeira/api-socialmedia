@@ -3,6 +3,7 @@ using ApiSocialMedia.Extensions;
 using Application;
 using Persistence;
 using Shared;
+using Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,7 @@ builder.Services.AddApiVersioningExtension();
 builder.Services.AddPersistenceInfraestructure(builder.Configuration);
 builder.Services.AddSharedInfraestructure(builder.Configuration);
 builder.Services.AddApllicationLayer();
+builder.Services.AddIdentityInfraestructure(builder.Configuration);
 #endregion
 
 
@@ -30,6 +32,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseErrorHandlingMiddleware();
 
